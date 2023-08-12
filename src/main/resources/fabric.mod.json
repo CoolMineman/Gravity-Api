@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "gravity_api",
-  "version": "1.0.3+boneless",
+  "version": "1.0.4+boneless",
 
   "name": "Gravity API",
   "description": "Lets you change player gravity",

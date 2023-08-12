@@ -4,6 +4,7 @@ import dev.onyxstudios.cca.api.v3.component.ComponentKey;
 import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
+import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
@@ -14,6 +15,6 @@ public class GravityChangerComponents implements EntityComponentInitializer {
 
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
-        registry.registerFor(Entity.class, GRAVITY_MODIFIER, GravityDirectionComponent::new);
+        registry.beginRegistration(Entity.class, GRAVITY_MODIFIER).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(GravityDirectionComponent::new);
     }
 }
